@@ -14,6 +14,7 @@ class Manager
         if @@screens.has_key?(@@screens_current)
             @@screens[@@screens_current].draw
         else
+            raise
         end
     end
 end
