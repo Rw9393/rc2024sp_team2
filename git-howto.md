@@ -39,10 +39,6 @@
 `git push origin ブランチ名`
 
 ## 作成されたブランチをコンピュータ内のファイルに反映する(作成した人以外)
-`git branch ブランチ名`
+`git fetch`
 
 `git checkout ブランチ名`
-
-`(git checkout -b ブランチ名)`
-
-`git pull origin ブランチ名`
