@@ -33,11 +33,11 @@
 ```git checkout -b ブランチ名```
 
 ## ブランチを作成した後にすること(作成した人)
-```git commit --allow-empty -m メッセージ```
-```git push origin ブランチ名```
+`git commit --allow-empty -m メッセージ`
+`git push origin ブランチ名`
 
 ## 作成されたブランチをコンピュータ内のファイルに反映する(作成した人以外)
-```git branch ブランチ名```
-```git checkout ブランチ名```
-```(git checkout -b ブランチ名)```
-```git pull origin ブランチ名```
+`git branch ブランチ名`
+`git checkout ブランチ名`
+`(git checkout -b ブランチ名)`
+`git pull origin ブランチ名`
