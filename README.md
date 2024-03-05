@@ -1,2 +1,2 @@
 # rc2024sp_team2
-アニキ
+RubyCamp2024 Spring Team2
