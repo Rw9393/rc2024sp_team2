@@ -10,6 +10,9 @@
 ## github上のリポジトリの状態を確認
 ```git pull```
 
+## github上のリポジトリを反映
+``` git pull origin ブランチ名```
+
 
 ## ファイルの追加・変更
 ### githubにあげるファイルを選択
@@ -34,11 +37,13 @@
 ```git checkout -b ブランチ名```
 
 ## ブランチを作成した後にすること(作成した人)
-`git commit --allow-empty -m メッセージ`
+`git commit --allow-empty -m "メッセージ"`
 
 `git push origin ブランチ名`
 
 ## 作成されたブランチをコンピュータ内のファイルに反映する(作成した人以外)
-`git fetch`
+`git branch ブランチ名`
 
 `git checkout ブランチ名`
+
+`git pull origin ブランチ名`
