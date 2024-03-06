@@ -1,6 +1,6 @@
 class Option
     def initialize
-        @bg_image = Image.load("image/bg_opening.png")
+        @bg_image = Image.load("image/stage.png")
         @title_font = Font.new(60)
         @label_font = Font.new(24)
         @font = Font.new(32)
@@ -15,12 +15,12 @@ class Option
         pos_x = (Window.width - font.get_width(text)) / 2
         Window.draw_font(pos_x, pos_y, text, font, options)
     end
-    
+
     def draw
         Window.draw(0, 0, @bg_image)
         draw_font_center(60, "設定", @title_font, color: C_BLACK)
-        Window.draw_font(80, 140, "Volume", @font)
-        Window.draw_font(80, 400, "難易度", @font)
+        Window.draw_font(80, 340, "Volume", @font)
+        Window.draw_font(80, 550, "難易度", @font)
 
         mouse_x = Input.mouse_pos_x
         mouse_y = Input.mouse_pos_y
