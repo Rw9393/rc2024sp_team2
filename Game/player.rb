@@ -38,18 +38,21 @@ class Player < Sprite
                 self.y = 663
             end
             self.y += Input.y + 4
+            animation(K_DOWN)
         end
         
         if Input.key_down?(K_RIGHT)
             if self.x >= 920
                 self.x = 915
             end
-            self.x += Input.x + 4 
+            self.x += Input.x + 4
+            animation(K_RIGHT) 
         elsif Input.key_down?(K_LEFT)
             if self.x <= 0
                 self.x = 5
             end
             self.x += Input.x - 4
+            animation(K_LEFT)
         end
 
         #puts("#{self.x}, #{self.y}")

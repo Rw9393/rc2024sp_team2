@@ -1,14 +1,14 @@
-class Gameover
+class Clear
     def initialize
         @titlefont = Font.new(64)
         @menufont = Font.new(35)
-        @go_image = Image.load("image/gameover2.png")
+        @gc_image = Image.load("image/clear2.png")
     end
 
     def draw
-        Window.draw_font(300, 130, "GAME OVER", @titlefont)
-        @go_image.set_color_key(C_RED)
-        Window.draw(250, 230, @go_image)
+        Window.draw_font(400, 110, "CLEAR", @titlefont)
+        @gc_image.set_color_key(C_RED)
+        Window.draw(350, 200, @gc_image)
         Window.draw_font(430, 610, "continue", @menufont)
         Window.draw_font(460, 690, "終了", @menufont)
         
