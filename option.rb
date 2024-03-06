@@ -23,6 +23,51 @@ class Option
         mouse_x = Input.mouse_pos_x
         mouse_y = Input.mouse_pos_y
 
+        volume = 125
+
+        # マウスの座標が四角形の範囲内にあるかどうかを確認
+        if mouse_x > 150 && mouse_x < (150 + 100) && #四角形のｘ座標＋横幅
+        mouse_y > 430 && mouse_y < (430 + 50)       #四角形のy座標＋縦幅
+  
+          # マウスが押された場合の処理
+          if Input.mouse_push?(M_LBUTTON)
+            volume -= 25
+          end
+        end
+  
+        # マウスの座標が四角形の範囲内にあるかどうかを確認
+        if mouse_x > 500 && mouse_x < (500 + 100) && #四角形のｘ座標＋横幅
+        mouse_y > 430 && mouse_y < (430 + 50)       #四角形のy座標＋縦幅
+  
+          # マウスが押された場合の処理
+          if Input.mouse_push?(M_LBUTTON)
+            volume += 25
+          end
+        end
+  
+        if volume > 250
+            volume = 250
+        end
+  
+        if volume < 0
+            volume = 0
+        end
+  
+        volume2 = volume / 25
+
+        #Sound1.set_volume(volume, time=0)
+        #Sound2.set_volume(volume, time=0)
+        #Sound3.set_volume(volume, time=0)
+
+        Window.draw_font(200, 390, "0", @font2, {color: C_WHITE})
+        Window.draw_line(220, 400, 530, 400, C_WHITE)
+        Window.draw_font(550, 390, "10", @font2, {color: C_WHITE})
+        Window.draw_box(150, 430, 250, 480, C_WHITE)
+        Window.draw_font(175, 450, "DOWN", @font2, color:C_RED)
+        Window.draw_font(370, 440, volume2.to_s, @font2, {color: C_WHITE})
+        Window.draw_box(500, 430, 600, 480, C_WHITE)
+        Window.draw_font(540, 450, "UP", @font2, color:C_RED)
+
         # マウスの座標が四角形の範囲内にあるかどうかを確認
         if mouse_x > 150 && mouse_x < (150 + 100) && #四角形のｘ座標＋横幅
             mouse_y > 650 && mouse_y < (650 + 50)       #四角形のy座標＋縦幅
