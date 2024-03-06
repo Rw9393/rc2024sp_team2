@@ -1,20 +1,18 @@
 require 'dxruby'
 
+require_relative 'title'
+require_relative 'option' 
+require_relative 'manager'
+
 Window.width = 1024
 Window.height = 768
 Window.scale = 1
-font = Font.new(32)
-=begin
-class Title
-    def initialize
-        self.screen          
-    end
 
-    def screen
-        Window.draw_font(100, 100, "タイトル", font)
-    end
-end
-=end
+Manager.load_screen(:title, Title.new)
+#Manager.load_screen(:game, Game.new)
+Manager.load_screen(:option, Option.new)
+Manager.current_screen(:title)
+
 Window.loop do
-    Window.draw_font(512, 384, "タイトル", font)
+    Manager.view
 end
