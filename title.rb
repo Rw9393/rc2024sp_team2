@@ -9,8 +9,9 @@ class Title
         Window.draw_font(230, 300, "スタート : Sキー", @menufont)
         Window.draw_font(230, 350, "設定 : Aキー", @menufont)
         Window.draw_font(230, 400, "終了 : ESCキー", @menufont)
+        
         if Input.key_push?(K_S)
-           # Manager.current_screen(:game)
+            Manager.current_screen(:game)
         elsif Input.key_push?(K_A)
             Manager.current_screen(:option)
         elsif Input.key_push?(K_ESCAPE)
