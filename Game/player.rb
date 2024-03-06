@@ -4,16 +4,19 @@ class Player < Sprite
     @@image1.set_color_key(C_RED)
     @@image2.set_color_key(C_RED)
 
+    attr_reader :bullets
+
     def initialize
         self.x = 100
         self.y = 365
         self.image = @@image1
-        @f = 0
+        @frame = 0
+        @bullets = []
     end
 
     def animation(key)
         if Input.key_down?(key) == true 
-            if @f <= 15
+            if @frame <= 15
                 self.image = @@image2
             else
                 self.image = @@image1
@@ -22,11 +25,12 @@ class Player < Sprite
     end
 
     def update
-        if @f <= 30
-            @f += 1
+        if @frame <= 30
+            @frame += 1
         else
-            @f = 0
+            @frame = 0
         end
+
         if Input.key_down?(K_UP)
             if self.y <= 55
                 self.y = 50
@@ -53,8 +57,11 @@ class Player < Sprite
             end
             self.x += Input.x - 4
             animation(K_LEFT)
+        elsif Input.key_push?(K_SPACE)            
+            @bullets << Player_bullets.new(self.x, self.y) 
         end
-
+        Sprite.update(self.bullets)
+        Sprite.draw(self.bullets)
         #puts("#{self.x}, #{self.y}")
     end
 end

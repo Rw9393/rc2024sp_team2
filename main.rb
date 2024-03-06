@@ -7,6 +7,7 @@ require_relative 'game'
 require_relative 'gameover'
 require_relative 'clear'
 require_relative 'Game/player.rb'
+require_relative 'Game/player_bullets.rb'
 
 Window.width = 1024
 Window.height = 768
