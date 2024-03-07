@@ -1,9 +1,7 @@
 class Game
     def initialize
         @count = 0
-        @player = Player.new
-        @enemy = [Normal_enemy.new(919, 300), Gun_enemy.new]
-        
+        @characters = [Player.new, Normal_enemy.new(919,300), Gun_enemy.new(900,150)]
         @image = Image.load("image/stage.png")
         @timer = Timer.new
     end
@@ -34,7 +32,9 @@ class Game
         
         @count += 1
         if @count == 180
-           @enemy  << Normal_enemy.new(919,600)
+            @characters  << Normal_enemy.new(919,600)
+        elsif @count == 300
+            @characters  << Gun_enemy.new(919,400)
         end
 
     end
