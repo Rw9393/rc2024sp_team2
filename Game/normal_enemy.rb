@@ -6,11 +6,14 @@ class Normal_enemy < Sprite
     @@image2.set_color_key(C_RED)
     @@image3.set_color_key(C_RED)
 
-    def initialize
-        self.x = 919
-        self.y = 365
+
+    def initialize (x,y)
+        self.x = x
+        self.y = y
+        @SPEED = 2
         self.image = @@image1
         @frame = 0
+       
     end
 
     def animation
@@ -27,7 +30,13 @@ class Normal_enemy < Sprite
         else
             @frame = 0
         end
-        
+
+
+        self.x -= 1 * @SPEED
+        if self.x <= -105
+            self.x = 919
+        end
+            
         animation
     end
 end
