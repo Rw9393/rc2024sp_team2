@@ -54,7 +54,7 @@ class Game
         end
 
         if @count_gun == 300
-            @enemy << Gun_enemy.new(919,400)
+            @enemy << Gun_enemy.new(919,rand(539) + 55)
         elsif @count_gun > 300
             @count_gun = 0
         end
