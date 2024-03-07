@@ -22,7 +22,7 @@ class Gun_enemy < Sprite
     end
 
     def hit(obj)
-        @score.add(100)
+        @score.add(300)
         vanish
     end
 

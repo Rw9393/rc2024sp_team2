@@ -10,7 +10,12 @@ class Game
         @image = Image.load("image/stage.png")
         @timer = Timer.new
         @score = Score.new
-        BGM.play
+        BGM.loop_count = -1
+        start = 0
+        if start == 0
+            BGM.play
+            start = 1
+        end
     end
 
     def draw
