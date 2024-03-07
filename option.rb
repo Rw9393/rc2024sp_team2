@@ -54,8 +54,6 @@ class Option
         volume2 = @volume / 25
     
         BGM.set_volume(@volume, time=0)
-        #Sound2.set_volume(@volume, time=0)
-        #Sound3.set_volume(@volume, time=0)
 
         Window.draw_font(200, 390, "0", @font2, {color: C_WHITE})
         Window.draw_line(220, 400, 530, 400, C_WHITE)
