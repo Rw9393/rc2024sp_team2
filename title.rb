@@ -1,7 +1,7 @@
 class Title
     def initialize
-        @titlefont = Font.new(64)
-        @menufont = Font.new(40)
+        @titlefont = Font.new(64, "美咲明朝")
+        @menufont = Font.new(40, "美咲明朝")
         @title_image = Image.load("image/title2.png")
         @title2_image = Image.load("image/title_left_enemy2.png")
         @title3_image = Image.load("image/title_right_enemy2.png")
