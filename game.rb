@@ -1,11 +1,13 @@
 class Game
     def initialize
-        @characters = [Player.new, Normal_enemy.new]
+        @characters = [Player.new, Normal_enemy.new, Gun_enemy.new]
         @image = Image.load("image/stage.png")
+        @timer = Timer.new
     end
 
     def draw
         Window.draw(0, 0, @image)
+        @timer.update
         Sprite.update(@characters)
         Sprite.draw(@characters)
         
