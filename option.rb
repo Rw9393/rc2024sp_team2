@@ -102,6 +102,8 @@ class Option
         if @center_rect_clicked
             Window.draw_box_fill(330, 650, 430, 700, C_WHITE)
             @level.levelchanger("NORMAL")
+        elsif @center_rect_clicked == false && Score.current_level == "NORMAL"
+            Window.draw_box_fill(330, 650, 430, 700, C_WHITE)
         else
             Window.draw_box(330, 650, 430, 700, C_WHITE)
         end

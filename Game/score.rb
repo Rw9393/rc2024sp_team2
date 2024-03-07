@@ -7,6 +7,10 @@ class Score
         @level_hash = {EASY:5000, NORMAL:10000, HARD:30000} 
     end
     
+    def self.current_level
+        @@level
+    end
+
     def levelchanger(level)
         @@level = level
     end
