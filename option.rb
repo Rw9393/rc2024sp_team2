@@ -9,6 +9,7 @@ class Option
         @left_rect_clicked = false
         @center_rect_clicked = false
         @right_rect_clicked = false
+        @level = Score.new
     end
 
     def draw_font_center(pos_y, text, font, options = {})
@@ -79,6 +80,7 @@ class Option
       # ボタンの描画
         if @left_rect_clicked
             Window.draw_box_fill(150, 650, 250, 700, C_WHITE)
+            @level.levelchanger("EASY")
         else
             Window.draw_box(150, 650, 250, 700, C_WHITE)
         end
@@ -99,6 +101,7 @@ class Option
       # ボタンの描画
         if @center_rect_clicked
             Window.draw_box_fill(330, 650, 430, 700, C_WHITE)
+            @level.levelchanger("NORMAL")
         else
             Window.draw_box(330, 650, 430, 700, C_WHITE)
         end
@@ -118,6 +121,7 @@ class Option
         # ボタンの描画
         if @right_rect_clicked
             Window.draw_box_fill(500, 650, 600, 700, C_WHITE)
+            @level.levelchanger("HARD")
         else
             Window.draw_box(500, 650, 600, 700, C_WHITE)
         end

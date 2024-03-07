@@ -17,7 +17,7 @@ class Normal_enemy < Sprite
     end
 
     def hit(obj)
-        @score.add(50)
+        @score.add(100)
         vanish
     end
 
