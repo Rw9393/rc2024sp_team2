@@ -130,11 +130,7 @@ class Option
 
         Window.draw_font(180, 670, "EASY", @font2, color:C_RED)
         Window.draw_font(350, 670, "NORMAL", @font2, color:C_RED)
-        Window.draw_font(525, 670, "HARD", @font2, color:C_RED)
-
-
-
-        SceneManager.transition(:stage1) if Input.key_push?(K_SPACE) 
+        Window.draw_font(525, 670, "HARD", @font2, color:C_RED) 
         
         if Input.key_push?(K_ESCAPE)
             Manager.current_screen(:title)
