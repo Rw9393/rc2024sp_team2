@@ -129,7 +129,7 @@ class Option
         end
 
         Window.draw_font(180, 670, "EASY", @font2, color:C_RED)
-        Window.draw_font(350, 670, "NOMAL", @font2, color:C_RED)
+        Window.draw_font(350, 670, "NORMAL", @font2, color:C_RED)
         Window.draw_font(525, 670, "HARD", @font2, color:C_RED)
 
 
