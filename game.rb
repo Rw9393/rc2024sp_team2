@@ -6,6 +6,7 @@ class Game
         #@characters = [Player.new, Normal_enemy.new(919,300), Gun_enemy.new(900,150)]
         @image = Image.load("image/stage.png")
         @timer = Timer.new
+        BGM.play
     end
 
     def draw

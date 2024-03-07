@@ -16,6 +16,8 @@ Window.width = 1024
 Window.height = 768
 Window.scale = 1
 
+BGM = Sound.new("Sound/3rd-Protoype.wav")
+
 Manager.load_screen(:title, Title.new)
 Manager.load_screen(:game, Game.new)
 Manager.load_screen(:option, Option.new)

@@ -53,7 +53,7 @@ class Option
   
         volume2 = @volume / 25
     
-        #Sound1.set_volume(@volume, time=0)
+        BGM.set_volume(@volume, time=0)
         #Sound2.set_volume(@volume, time=0)
         #Sound3.set_volume(@volume, time=0)
 
