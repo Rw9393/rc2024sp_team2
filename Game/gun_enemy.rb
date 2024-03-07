@@ -4,11 +4,12 @@ class Gun_enemy < Sprite
     @@image1.set_color_key(C_RED)
     @@image2.set_color_key(C_RED)
 
-    def initialize
-        self.x = 919
-        self.y = 365
+    def initialize(x,y)
+        self.x = x
+        self.y = y
         self.image = @@image1
         @frame = 0    
+        @SPEED = 1
     end
 
     def animation
@@ -26,6 +27,13 @@ class Gun_enemy < Sprite
             @frame = 0
         end
 
+        self.x -= 1 * @SPEED
+        if self.x <= -105
+            self.x = 910
+        end
+
         animation
     end
 end
+
+#進む→ランダムのタイミングで一回止まる進む
