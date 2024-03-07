@@ -15,6 +15,10 @@ class Gun_enemy < Sprite
         @stop_counter = 0
     end
 
+    def hit(obj)
+        vanish
+    end
+
     def animation
         if @frame <= 15
             self.image = @@image2
@@ -48,7 +52,6 @@ class Gun_enemy < Sprite
             end
         end
         
-
         animation
     end
 

@@ -1,7 +1,9 @@
 class Game
     def initialize
         @count = 0
-        @characters = [Player.new, Normal_enemy.new(919,300), Gun_enemy.new(900,150)]
+        @player = Player.new
+        @enemy = [Normal_enemy.new(919, 300), Gun_enemy.new(900, 150)]
+        #@characters = [Player.new, Normal_enemy.new(919,300), Gun_enemy.new(900,150)]
         @image = Image.load("image/stage.png")
         @timer = Timer.new
     end
@@ -21,6 +23,15 @@ class Game
         end 
 =end
 
+
+        
+        @count += 1
+        if @count == 180
+            @enemy  << Normal_enemy.new(919,600)
+        elsif @count == 300
+            @enemy  << Gun_enemy.new(919,400)
+        end
+
         if Input.key_push?(K_ESCAPE)
             Manager.current_screen(:title)
         elsif Input.key_push?(K_O)
@@ -28,14 +39,5 @@ class Game
         elsif Input.key_push?(K_C)
             Manager.current_screen(:clear)
         end
-
-        
-        @count += 1
-        if @count == 180
-            @characters  << Normal_enemy.new(919,600)
-        elsif @count == 300
-            @characters  << Gun_enemy.new(919,400)
-        end
-
     end
 end
