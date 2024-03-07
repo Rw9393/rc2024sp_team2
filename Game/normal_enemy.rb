@@ -13,10 +13,11 @@ class Normal_enemy < Sprite
         @SPEED = 2
         self.image = @@image1
         @frame = 0
-       
+        @score = Score.new
     end
 
     def hit(obj)
+        @score.add(50)
         vanish
     end
 

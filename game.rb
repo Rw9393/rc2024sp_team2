@@ -9,12 +9,14 @@ class Game
         #@characters = [Player.new, Normal_enemy.new(919,300), Gun_enemy.new(900,150)]
         @image = Image.load("image/stage.png")
         @timer = Timer.new
+        @score = Score.new
         BGM.play
     end
 
     def draw
         Window.draw(0, 0, @image)
         @timer.update
+        @score.update
         Sprite.update([@player] + @enemy)
         Sprite.draw([@player] + @enemy)
         Sprite.check(@player.bullets, @enemy)

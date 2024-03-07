@@ -18,9 +18,11 @@ class Gun_enemy < Sprite
         @stop_flag = false
         @stop_counter = 0
         @bullets = []
+        @score = Score.new
     end
 
     def hit(obj)
+        @score.add(100)
         vanish
     end
 
