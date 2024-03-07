@@ -1,7 +1,7 @@
 class Game
     def initialize
         @count = 0
-        @characters = [Player.new, Normal_enemy.new(919,300)]
+        @characters = [Player.new, Normal_enemy.new(919,300), Gun_enemy.new]
         @image = Image.load("image/stage.png")
         @timer = Timer.new
     end
