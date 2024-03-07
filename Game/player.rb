@@ -14,6 +14,10 @@ class Player < Sprite
         @bullets = []
     end
 
+    def hit(obj)
+        Manager.current_screen(:gameover)
+    end
+
     def animation(key)
         if Input.key_down?(key) == true 
             if @frame <= 15

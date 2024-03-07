@@ -11,6 +11,7 @@ require_relative 'Game/player'
 require_relative 'Game/player_bullets'
 require_relative 'Game/normal_enemy'
 require_relative 'Game/gun_enemy'
+require_relative 'Game/enemy_bullets'
 
 Window.width = 1024
 Window.height = 768
