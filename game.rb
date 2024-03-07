@@ -21,7 +21,9 @@ class Game
         end
         @count += 1
         if @count == 180
-            @characters  << Normal_enemy.new(919,400)
+            @characters  << Normal_enemy.new(919,600)
+        elsif @count == 300
+            @characters  << Gun_enemy.new(919,400)
         end
 
     end
