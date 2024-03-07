@@ -1,6 +1,7 @@
 class Game
     def initialize
-        @characters = [Player.new, Normal_enemy.new]
+        @count = 0
+        @characters = [Player.new, Normal_enemy.new(919,300)]
         @image = Image.load("image/stage.png")
     end
 
@@ -16,5 +17,10 @@ class Game
         elsif Input.key_push?(K_C)
             Manager.current_screen(:clear)
         end
+        @count += 1
+        if @count == 180
+            @characters  << Normal_enemy.new(919,400)
+        end
+
     end
 end
