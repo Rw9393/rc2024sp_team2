@@ -64,6 +64,7 @@ class Player < Sprite
         elsif Input.key_push?(K_SPACE)            
             @bullets << Player_bullets.new(self.x, self.y) 
         end
+        
         Sprite.update(self.bullets)
         Sprite.draw(self.bullets)
         #puts("#{self.x}, #{self.y}")

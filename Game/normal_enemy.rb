@@ -20,12 +20,17 @@ class Normal_enemy < Sprite
         vanish
     end
 
+    def shot(obj)
+        self.image = @@image3
+    end
+    
     def animation
         if @frame <= 15
             self.image = @@image2
         else
             self.image = @@image1
         end
+
     end
 
     def update

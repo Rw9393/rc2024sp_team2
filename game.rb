@@ -3,8 +3,9 @@ class Game
         @count_normal = 0
         @count_gun = 0
         @player = Player.new
+        @normal_enemy = Normal_enemy.new(919, 300)
         @gun_enemy = Gun_enemy.new(900, 150)
-        @enemy = [Normal_enemy.new(919, 300), @gun_enemy]
+        @enemy = [@normal_enemy, @gun_enemy]
         #@characters = [Player.new, Normal_enemy.new(919,300), Gun_enemy.new(900,150)]
         @image = Image.load("image/stage.png")
         @timer = Timer.new
@@ -18,11 +19,15 @@ class Game
         Sprite.draw([@player] + @enemy)
         Sprite.check(@player.bullets, @enemy)
         #@enemy.delete_if{|enemy| enemy.vanished?}
+        Sprite.check(@normal_enemy, @player)
         Sprite.check(@gun_enemy.bullets, @player)
 
         @enemy.each do |enemy|
             if enemy.is_a?(Gun_enemy)
-              Sprite.check(enemy.bullets, @player)
+                Sprite.check(enemy.bullets, @player)
+            end
+            if enemy.is_a?(Normal_enemy)
+                Sprite.check(enemy, @player)
             end
           end
 =begin        
