@@ -1,6 +1,6 @@
 class Timer
     def initialize
-        @font = Font.new(40)
+        @font = Font.new(40, "美咲明朝")
         @count = 0
         @sec = 0
         @min = 0

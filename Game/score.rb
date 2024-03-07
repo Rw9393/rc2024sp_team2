@@ -3,7 +3,7 @@ class Score
     @@level = "NORMAL"
 
     def initialize
-        @font = Font.new(40)
+        @font = Font.new(40, "美咲明朝")
         @level_hash = {EASY:5000, NORMAL:10000, HARD:30000} 
     end
     

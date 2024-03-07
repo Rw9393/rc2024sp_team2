@@ -1,9 +1,9 @@
 class Option
     def initialize
-        @title_font = Font.new(60)
-        @label_font = Font.new(24)
-        @font = Font.new(32)
-        @font2 = Font.new(20)
+        @title_font = Font.new(60, "美咲明朝")
+        @label_font = Font.new(24, "美咲明朝")
+        @font = Font.new(40, "美咲明朝")
+        @font2 = Font.new(25, "美咲明朝")
         @volume = 125
         # ボタンが押されているかどうかのフラグ
         @left_rect_clicked = false
