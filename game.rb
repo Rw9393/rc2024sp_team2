@@ -1,8 +1,10 @@
 class Game
     def initialize
-        @count = 0
+        @count_normal = 0
+        @count_gun = 0
         @player = Player.new
-        @enemy = [Normal_enemy.new(919, 300), Gun_enemy.new(900, 150)]
+        @gun_enemy = Gun_enemy.new(900, 150)
+        @enemy = [Normal_enemy.new(919, 300), @gun_enemy]
         #@characters = [Player.new, Normal_enemy.new(919,300), Gun_enemy.new(900,150)]
         @image = Image.load("image/stage.png")
         @timer = Timer.new
@@ -15,7 +17,14 @@ class Game
         Sprite.update([@player] + @enemy)
         Sprite.draw([@player] + @enemy)
         Sprite.check(@player.bullets, @enemy)
-        @enemy.delete_if{|enemy| enemy.vanished?}
+        #@enemy.delete_if{|enemy| enemy.vanished?}
+        Sprite.check(@gun_enemy.bullets, @player)
+
+        @enemy.each do |enemy|
+            if enemy.is_a?(Gun_enemy)
+              Sprite.check(enemy.bullets, @player)
+            end
+          end
 =begin        
         @enemy.each do |e|
             if e.vanished?
@@ -24,19 +33,22 @@ class Game
         end 
 =end
 
+        @count_normal += 1
+        @count_gun += 1
+        if @count_normal == 180
+            @enemy  << Normal_enemy.new(919, rand(569) + 55)
+        elsif @count_normal > 180
+            @count_normal = 0
+        end
 
-        
-        @count += 1
-        if @count == 180
-            @enemy  << Normal_enemy.new(919,600)
-        elsif @count == 300
-            @enemy  << Gun_enemy.new(919,400)
+        if @count_gun == 300
+            @enemy << Gun_enemy.new(919,400)
+        elsif @count_gun > 300
+            @count_gun = 0
         end
 
         if Input.key_push?(K_ESCAPE)
             Manager.current_screen(:title)
-        elsif Input.key_push?(K_O)
-            Manager.current_screen(:gameover)
         elsif Input.key_push?(K_C)
             Manager.current_screen(:clear)
         end
