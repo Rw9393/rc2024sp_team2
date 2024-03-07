@@ -4,6 +4,7 @@ class Option
         @label_font = Font.new(24)
         @font = Font.new(32)
         @font2 = Font.new(20)
+        @volume = 125
         # ボタンが押されているかどうかのフラグ
         @left_rect_clicked = false
         @center_rect_clicked = false
@@ -23,15 +24,12 @@ class Option
         mouse_x = Input.mouse_pos_x
         mouse_y = Input.mouse_pos_y
 
-        volume = 125
-
         # マウスの座標が四角形の範囲内にあるかどうかを確認
         if mouse_x > 150 && mouse_x < (150 + 100) && #四角形のｘ座標＋横幅
         mouse_y > 430 && mouse_y < (430 + 50)       #四角形のy座標＋縦幅
-  
           # マウスが押された場合の処理
           if Input.mouse_push?(M_LBUTTON)
-            volume -= 25
+            @volume -= 25
           end
         end
   
@@ -41,23 +39,21 @@ class Option
   
           # マウスが押された場合の処理
           if Input.mouse_push?(M_LBUTTON)
-            volume += 25
+            @volume += 25
           end
         end
   
-        if volume > 250
-            volume = 250
+        if @volume > 250
+            @volume = 250
         end
   
-        if volume < 0
-            volume = 0
+        if @volume < 0
+            @volume = 0
         end
   
-        volume2 = volume / 25
-
-        #Sound1.set_volume(volume, time=0)
-        #Sound2.set_volume(volume, time=0)
-        #Sound3.set_volume(volume, time=0)
+        volume2 = @volume / 25
+    
+        BGM.set_volume(@volume, time=0)
 
         Window.draw_font(200, 390, "0", @font2, {color: C_WHITE})
         Window.draw_line(220, 400, 530, 400, C_WHITE)
