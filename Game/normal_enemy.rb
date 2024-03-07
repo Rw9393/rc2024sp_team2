@@ -16,6 +16,10 @@ class Normal_enemy < Sprite
        
     end
 
+    def hit(obj)
+        vanish
+    end
+
     def animation
         if @frame <= 15
             self.image = @@image2

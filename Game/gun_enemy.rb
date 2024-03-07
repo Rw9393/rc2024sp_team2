@@ -8,7 +8,7 @@ class Gun_enemy < Sprite
         self.x = 919
         self.y = 365
         self.image = @@image1
-        @frame = 0    
+        @frame = 0
     end
 
     def animation
