@@ -20,15 +20,15 @@ class Timer
 
         if @min < 9
             if @sec > 9
-                Window.draw_font(935, 0, "0#{@min}:#{@sec}", @font)
+                Window.draw_font(930, 0, "0#{@min}:#{@sec}", @font)
             else
-                Window.draw_font(935, 0, "0#{@min}:0#{@sec}", @font)
+                Window.draw_font(930, 0, "0#{@min}:0#{@sec}", @font)
             end
         else
             if @sec < 9
-                Window.draw_font(935, 0, "#{@min}:0#{@sec}", @font)
+                Window.draw_font(930, 0, "#{@min}:0#{@sec}", @font)
             else
-                Window.draw_font(935, 0, "#{@min}:#{@sec}", @font)
+                Window.draw_font(930, 0, "#{@min}:#{@sec}", @font)
             end
         end
     end

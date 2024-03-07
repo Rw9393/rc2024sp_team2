@@ -17,7 +17,7 @@ class Score
     
     def update
         levels = @@level.to_sym
-        Window.draw_font(520, 0, "Score:#{@@score} (Target:#{@level_hash[levels]})", @font)
+        Window.draw_font(450, 0, "Score:#{@@score}(Target:#{@level_hash[levels]})", @font)
 
         if @@level == "EASY" && @@score >= @level_hash[:EASY]
             Manager.current_screen(:clear)
