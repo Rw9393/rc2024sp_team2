@@ -4,7 +4,7 @@ class Enemy_bullets < Sprite
 
     def initialize(x, y)
         self.x = x 
-        self.y = y 
+        self.y = y + 86
         self.image = @@image
     end
 
