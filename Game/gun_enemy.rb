@@ -27,4 +27,5 @@ class Gun_enemy < Sprite
         end
 
         animation
+    end
 end
