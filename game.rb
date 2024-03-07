@@ -1,13 +1,14 @@
 class Game
     def initialize
-        @characters = Player.new
+        @count = 0
+        @characters = [Player.new, Normal_enemy.new(919,300)]
         @image = Image.load("image/stage.png")
     end
 
     def draw
         Window.draw(0, 0, @image)
-        @characters.update
-        @characters.draw
+        Sprite.update(@characters)
+        Sprite.draw(@characters)
         
         if Input.key_push?(K_ESCAPE)
             Manager.current_screen(:title)
@@ -16,5 +17,10 @@ class Game
         elsif Input.key_push?(K_C)
             Manager.current_screen(:clear)
         end
+        @count += 1
+        if @count == 180
+            @characters  << Normal_enemy.new(919,400)
+        end
+
     end
 end
