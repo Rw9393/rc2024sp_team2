@@ -1,7 +1,7 @@
 class Clear
     def initialize
-        @titlefont = Font.new(64)
-        @menufont = Font.new(35)
+        @titlefont = Font.new(64, "美咲明朝")
+        @menufont = Font.new(35, "美咲明朝")
         @gc_image = Image.load("image/clear2.png")
     end
 

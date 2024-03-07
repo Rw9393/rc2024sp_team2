@@ -2,7 +2,7 @@ class Score
     @@score = 0
     @@level = "NORMAL"
     def initialize
-        @font = Font.new(40)
+        @font = Font.new(40, "美咲明朝")
     end
     def levelchanger(level)
         @@level = level
