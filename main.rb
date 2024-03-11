@@ -1,7 +1,7 @@
                                                                                                                                                         require 'dxruby'
 
 require_relative 'title'
-require_relative 'option' 
+require_relative 'option'
 require_relative 'manager'
 require_relative 'game'
 require_relative 'gameover'
@@ -13,6 +13,7 @@ require_relative 'Game/normal_enemy'
 require_relative 'Game/gun_enemy'
 require_relative 'Game/enemy_bullets'
 require_relative 'Game/score'
+require_relative 'Game/life'
 
 Window.width = 1024
 Window.height = 768
