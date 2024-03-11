@@ -45,37 +45,40 @@ class Gun_enemy < Sprite
     end
 
     def update
-        if @frame <= 30
-            @frame += 1
-        else
-            @frame = 0
-        end
+        if Player.hit_check == false
+            if @frame <= 30
+                @frame += 1
+            else
+                @frame = 0
+            end
 
-        @current_frame += 1
+            @current_frame += 1
 
-        self.x  -= @SPEED
 
-        if self.x <= -105
-             self.x = 910
-        end
+            self.x  -= @SPEED
 
-        if self.x % 100 == 0 && @stop_flag == false
-            @gun_frame = @current_frame + 15
-            @stop_flag = true
-        end
+            if self.x <= -105
+                self.x = 910
+            end
 
-        if nilguard && @gun_frame >= @current_frame
-            shoot
-        end
+            if self.x % 100 == 0 && @stop_flag == false
+                @gun_frame = @current_frame + 15
+                @stop_flag = true
+            end
 
-        if @stop_flag
-            self.x += @SPEED
-            #@bullets << Enemy_bullets.new(self.x, self.y)
-            @stop_counter += 1
-            if @stop_counter == STOP_MAX
-                @stop_flag = false
-                self.x -= 2
-                @stop_counter = 0
+            if nilguard && @gun_frame >= @current_frame
+                shoot
+            end
+
+            if @stop_flag
+                self.x += @SPEED
+                #@bullets << Enemy_bullets.new(self.x, self.y)
+                @stop_counter += 1
+                if @stop_counter == STOP_MAX
+                    @stop_flag = false
+                    self.x -= 2
+                    @stop_counter = 0
+                end
             end
         end
 

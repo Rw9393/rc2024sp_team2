@@ -11,11 +11,10 @@ class Gameover
         Window.draw(250, 230, @go_image)
         Window.draw_font(430, 610, "continue", @menufont)
         Window.draw_font(460, 690, "終了", @menufont)
-        
+
 
         mouse_x = Input.mouse_pos_x
         mouse_y = Input.mouse_pos_y
-
 
         # マウスの座標が四角形の範囲内にあるかどうかを確認
         if mouse_x > 350 && mouse_x < (350 + 300) && #四角形のｘ座標＋横幅
@@ -39,9 +38,9 @@ class Gameover
                 exit
             else
                 Window.draw_box(350, 680, 650, 730, C_WHITE)
-           
+
             end
         end
 
-    end    
+    end
 end

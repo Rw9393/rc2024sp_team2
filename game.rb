@@ -10,6 +10,7 @@ class Game
         @image = Image.load("image/stage.png")
         @timer = Timer.new
         @score = Score.new
+        @life = Life.new
         BGM.loop_count = -1
         start = 0
         if start == 0
@@ -22,6 +23,7 @@ class Game
         Window.draw(0, 0, @image)
         @timer.update
         @score.update
+        @life.update
         Sprite.update([@player] + @enemy)
         Sprite.draw([@player] + @enemy)
         Sprite.check(@player.bullets, @enemy)
@@ -37,12 +39,12 @@ class Game
                 Sprite.check(enemy, @player)
             end
           end
-=begin        
+=begin
         @enemy.each do |e|
             if e.vanished?
                 @enemy.delete(e)
             end
-        end 
+        end
 =end
 
         @count_normal += 1
