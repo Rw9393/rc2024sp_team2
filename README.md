@@ -1,5 +1,5 @@
 # rc2024sp_team2
-RubyCamp2024 Spring Team2
+RubyCamp2024 Spring Team2 (後日改変版)
 
 ## License
 
